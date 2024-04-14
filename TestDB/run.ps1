@@ -1,0 +1,1 @@
+docker-compose -f $PSScriptRoot/sql-server.docker-compose.yml up -d

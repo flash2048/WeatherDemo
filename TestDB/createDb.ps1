@@ -1,0 +1,1 @@
+Invoke-Sqlcmd -Query "IF NOT EXISTS ( SELECT [name] FROM sys.databases WHERE [name] = 'weather' )BEGIN CREATE DATABASE [weather] END" -ServerInstance "127.0.0.1" -Password "YourStrong@Passw0rd" -Username sa

@@ -1,0 +1,1 @@
+docker stop sql-server-2022-cu10-ubuntu
