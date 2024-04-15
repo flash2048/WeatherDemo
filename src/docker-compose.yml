@@ -1,11 +1,14 @@
-version: '3.8'
+version: '3.9'
 services:
   weatherapi:
-    hostname: weatherapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTP_PORTS=8081
+    container_name: weatherapi
+    image: weatherapi
     build:
-      context: ./
       dockerfile: web/Dockerfile
     restart: always
     ports:
-      - "8080:8080"
       - "8081:8081"

@@ -16,13 +16,13 @@ COPY web/*.csproj ./web/
 
 RUN dotnet restore "web/Weather.csproj"
 COPY . .
-RUN dotnet build "web/Weather.csproj" -c Release -o /app
+RUN dotnet build "web/Weather.csproj" -c Release -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "web/Weather.csproj" -c Release -o /app
+RUN dotnet publish "web/Weather.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app ./
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Weather.dll"]
