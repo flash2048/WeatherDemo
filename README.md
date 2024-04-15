@@ -29,6 +29,7 @@ You can use the "**/swagger/index.html**" page to test all APIs.
  - Add caching to get data from a database.
  - Add authentication and authorization.
  - Change work with the connection string.
+ - Add integration tests. 
  
 ---
 
